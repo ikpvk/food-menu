@@ -61,6 +61,17 @@ function App() {
         ))}
       </div>
       <TotalBar total={total} onGenerateBill={() => setShowBill(true)} />
+      <footer className="bg-gray-100 text-center py-2 mt-auto font-mono text-sm text-gray-700">
+        Developed by{" "}
+        <a
+          href="https://github.com/ikpvk"
+          className="underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://github.com/ikpvk
+        </a>
+      </footer>
     </div>
   );
 }
