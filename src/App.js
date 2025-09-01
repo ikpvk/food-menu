@@ -56,17 +56,17 @@ function App() {
     <div className="min-h-screen bg-gray-50 p-6">
       <h1 className="text-2xl font-bold mb-6 text-center">Menu</h1>
 
-      <div className="max-w-2xl mx-auto mb-6">
+      <div className="max-w-2xl mx-auto mb-6 sticky top-4 bg-gray-50 z-10">
         <input
           type="text"
           placeholder="Search items..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="p-2 border rounded w-full"
+          className="p-2 border rounded w-full shadow"
         />
       </div>
 
-      <div className="max-w-2xl mx-auto grid gap-4">
+      <div className="max-w-2xl mx-auto grid gap-4 pb-24">
         {filteredMenu.map((m) => (
           <div
             key={m.index}
@@ -96,7 +96,9 @@ function App() {
         ))}
       </div>
 
-      <div className="mt-8 text-center text-xl font-bold">Total: ₹{total}</div>
+      <div className="sticky bottom-0 bg-gray-50 z-10 py-4 shadow text-center text-xl font-bold">
+        Total: ₹{total}
+      </div>
     </div>
   );
 }
