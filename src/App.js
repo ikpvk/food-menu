@@ -9,9 +9,9 @@ const menu = [
   { item: "Masala tea", quantity: "Big", price: 18 },
   { item: "Elaichi tea", quantity: "Small", price: 15 },
   { item: "Elaichi tea", quantity: "Big", price: 18 },
-  { item: "Badam tea", quantity: "Big", price: 15 },
+  { item: "Badam tea", quantity: "Small", price: 15 },
   { item: "Badam tea", quantity: "Big", price: 18 },
-  { item: "Ginger tea", quantity: "Big", price: 15 },
+  { item: "Ginger tea", quantity: "Small", price: 15 },
   { item: "Ginger tea", quantity: "Big", price: 18 },
   { item: "Ginger lemon tea", quantity: "Big", price: 20 },
   { item: "Green tea", quantity: "Big", price: 20 },
@@ -27,8 +27,9 @@ const menu = [
   { item: "Osmania biscuits", quantity: "3 Pcs", price: 10 },
 ];
 
-export default function App() {
+function App() {
   const [counts, setCounts] = useState(Array(menu.length).fill(0));
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleIncrement = (index) => {
     const newCounts = [...counts];
@@ -47,13 +48,28 @@ export default function App() {
     0
   );
 
+  const filteredMenu = menu
+    .map((m, i) => ({ ...m, index: i }))
+    .filter((m) => m.item.toLowerCase().includes(searchQuery.toLowerCase()));
+
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <h1 className="text-2xl font-bold mb-6 text-center">Menu</h1>
+
+      <div className="max-w-2xl mx-auto mb-6">
+        <input
+          type="text"
+          placeholder="Search items..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="p-2 border rounded w-full"
+        />
+      </div>
+
       <div className="max-w-2xl mx-auto grid gap-4">
-        {menu.map((m, i) => (
+        {filteredMenu.map((m) => (
           <div
-            key={i}
+            key={m.index}
             className="flex justify-between items-center bg-white shadow p-4 rounded-2xl"
           >
             <div>
@@ -63,14 +79,14 @@ export default function App() {
             </div>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => handleDecrement(i)}
+                onClick={() => handleDecrement(m.index)}
                 className="px-3 py-1 bg-gray-200 rounded-full"
               >
                 -
               </button>
-              <span>{counts[i]}</span>
+              <span>{counts[m.index]}</span>
               <button
-                onClick={() => handleIncrement(i)}
+                onClick={() => handleIncrement(m.index)}
                 className="px-3 py-1 bg-blue-500 text-white rounded-full"
               >
                 +
@@ -84,3 +100,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
