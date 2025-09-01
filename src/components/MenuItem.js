@@ -2,8 +2,10 @@ function MenuItem({ item, count, onIncrement, onDecrement }) {
   return (
     <div className="flex justify-between items-center bg-white shadow p-4 rounded-2xl">
       <div>
-        <p className="font-semibold">{item.item}</p>
-        <p className="text-sm text-gray-500">{item.quantity}</p>
+        <p className="font-semibold">
+          {item.item} - {item.quantity}
+        </p>
+        {/* <p className="text-sm text-gray-500">{item.quantity}</p> */}
         <p className="text-sm">₹{item.price}</p>
       </div>
       <div className="flex items-center gap-2">
