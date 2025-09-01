@@ -14,14 +14,15 @@ function BillPage({ items, total, onBack }) {
       <div className="bg-white shadow-md rounded p-4 w-80 font-mono text-sm">
         {/* Bill Header */}
         <h1 className="text-center text-lg font-bold mb-2">FOOD MENU BILL</h1>
-        <p className="text-center mb-4">==================================</p>
+        <p className="text-center mb-4">==============================</p>
 
         {/* Table Header */}
-        <div className="grid grid-cols-[3fr_1fr_1fr] font-bold border-b border-dashed pb-1 mb-2">
+        <div className="grid grid-cols-[3fr_1fr_1fr] font-bold pb-1 mb-2">
           <span>Item</span>
           <span className="text-center">Qty</span>
           <span className="text-right">Price</span>
         </div>
+        <p className="text-center">------------------------------</p>
 
         {/* Items */}
         {items.map((m, i) => (
@@ -33,7 +34,7 @@ function BillPage({ items, total, onBack }) {
               <span className="text-center">{m.count}</span>
               <span className="text-right">₹{m.count * m.price}</span>
             </div>
-            <p className="text-center">----------------------------------</p>
+            <p className="text-center">------------------------------</p>
           </div>
         ))}
 
@@ -43,7 +44,7 @@ function BillPage({ items, total, onBack }) {
           <span>₹{total}</span>
         </div>
 
-        <p className="mt-2">==================================</p>
+        <p className="text-center mb-4">==============================</p>
 
         {/* Footer */}
         <p className="text-center mt-4 text-xs">
