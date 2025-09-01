@@ -1,0 +1,28 @@
+const menu = [
+  { item: "Tea", quantity: "Small", price: 12 },
+  { item: "Tea", quantity: "Big", price: 15 },
+  { item: "Black tea", quantity: "Small", price: 12 },
+  { item: "Black tea", quantity: "Big", price: 15 },
+  { item: "Masala tea", quantity: "Small", price: 15 },
+  { item: "Masala tea", quantity: "Big", price: 18 },
+  { item: "Elaichi tea", quantity: "Small", price: 15 },
+  { item: "Elaichi tea", quantity: "Big", price: 18 },
+  { item: "Badam tea", quantity: "Small", price: 15 },
+  { item: "Badam tea", quantity: "Big", price: 18 },
+  { item: "Ginger tea", quantity: "Small", price: 15 },
+  { item: "Ginger tea", quantity: "Big", price: 18 },
+  { item: "Ginger lemon tea", quantity: "Big", price: 20 },
+  { item: "Green tea", quantity: "Big", price: 20 },
+  { item: "Lemon tea", quantity: "Big", price: 20 },
+  { item: "Milk", quantity: "Small", price: 15 },
+  { item: "Milk", quantity: "Big", price: 20 },
+  { item: "Coffee", quantity: "Big", price: 20 },
+  { item: "Boost", quantity: "Big", price: 20 },
+  { item: "Horlicks", quantity: "Big", price: 20 },
+  { item: "Bourn vita", quantity: "Big", price: 20 },
+  { item: "Badam milk", quantity: "Big", price: 20 },
+  { item: "Sonti coffee", quantity: "Big", price: 20 },
+  { item: "Osmania biscuits", quantity: "3 Pcs", price: 10 },
+];
+
+export default menu;
